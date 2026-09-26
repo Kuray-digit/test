@@ -5,16 +5,25 @@ namespace Program
 {
     class exercise_2_1
     {
-        enum bankCards
+        enum BankCards
         {
             current,
             saving
         }
+        struct BankCardInformation
+        {
+            public int number;
+            public BankCards bankCards;
+            public int balance;
+        }
         public static void Main()
         {
-            
-            bankCards myBankCard = bankCards.current;
-            Console.WriteLine(myBankCard);
+            BankCardInformation Jack = new BankCardInformation();
+            Jack.number = 12;
+            Jack.bankCards = BankCards.current;
+            Jack.balance = 1000;
+            Console.WriteLine($"Баланс: {Jack.balance}, номер карты: {Jack.bankCards}, тип: {Jack.number}");
+
         }
     }
 }
