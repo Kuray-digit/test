@@ -5,24 +5,23 @@ namespace Program
 {
     class exercise_2_1
     {
-        enum BankCards
+        enum College
         {
-            current,
-            saving
+            KFU,
+            KAI,
+            KChTI
         }
-        struct BankCardInformation
+        struct memberOfCollege
         {
-            public int number;
-            public BankCards bankCards;
-            public int balance;
+            public string name;
+            public College college;
         }
         public static void Main()
         {
-            BankCardInformation Jack = new BankCardInformation();
-            Jack.number = 12;
-            Jack.bankCards = BankCards.current;
-            Jack.balance = 1000;
-            Console.WriteLine($"Баланс: {Jack.balance}, номер карты: {Jack.bankCards}, тип: {Jack.number}");
+            memberOfCollege mathew = new memberOfCollege();
+            mathew.name = "Mathew";
+            mathew.college = College.KFU;
+            Console.WriteLine($"Имя: {mathew.name}, ВУЗ: {mathew.college}");
 
         }
     }
