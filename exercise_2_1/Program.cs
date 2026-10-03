@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Program
 {
-    class exercise_2_1
+    class Exercise_2_1
     {
         struct UserData()
         {
