@@ -26,7 +26,7 @@ namespace Program
             public string surname;
             public string name;
             public int indificator;
-            public DateTime birthday;
+            public string birthday;
             public CategoryOfAlcogolism alcoCategory;
             public int volumeDrinked;
         }
@@ -34,7 +34,7 @@ namespace Program
         struct Drinks()
         {
             public string name;
-            public string alcoholContent;
+            public double alcoholContent;
         }
 
         public static void Main(string[] args)
@@ -133,7 +133,73 @@ namespace Program
 
                     case 6:
                         Console.WriteLine("\nНомер 6");
-
+                        Student ivan = new()
+                        {
+                            name = "Ivan",
+                            surname = "Kabanov",
+                            indificator = 0,
+                            birthday = "20.08.2008",
+                            alcoCategory = CategoryOfAlcogolism.d,
+                            volumeDrinked = 0
+                        };
+                        Student igor = new()
+                        {
+                            name = "Igor",
+                            surname = "Kazakov",
+                            indificator = 0,
+                            birthday = "13.01.2008",
+                            alcoCategory = CategoryOfAlcogolism.c,
+                            volumeDrinked = 10
+                        };
+                        Student andrew = new()
+                        {
+                            name = "Andrew",
+                            surname = "Vladimirov",
+                            indificator = 0,
+                            birthday = "16.06.2008",
+                            alcoCategory = CategoryOfAlcogolism.b,
+                            volumeDrinked = 20
+                        };
+                        Student vlad = new()
+                        {
+                            name = "Vladislav",
+                            surname = "Makdoknakov",
+                            indificator = 0,
+                            birthday = "06.12.2007",
+                            alcoCategory = CategoryOfAlcogolism.a,
+                            volumeDrinked = 10
+                        };
+                        Student matt = new()
+                        {
+                            name = "Matt",
+                            surname = "Istoriev",
+                            indificator = 0,
+                            birthday = "18.11.2008",
+                            alcoCategory = CategoryOfAlcogolism.d,
+                            volumeDrinked = 0
+                        };
+                        Drinks Pivo = new()
+                        {
+                            name = "Pivo",
+                            alcoholContent = 6.0 / 100
+                        };
+                        Drinks Vine = new()
+                        {
+                            name = "Vine",
+                            alcoholContent = 14.0 / 100
+                        };
+                        double ivanDrinked = Pivo.alcoholContent * ivan.volumeDrinked;
+                        double igorDrinked = Pivo.alcoholContent * igor.volumeDrinked;
+                        double andrewDrinked = Vine.alcoholContent * andrew.volumeDrinked;
+                        double vladDrinked = Vine.alcoholContent * vlad.volumeDrinked;
+                        double mattDrinked = Pivo.alcoholContent * matt.volumeDrinked;
+                        int globalDrinked = ivan.volumeDrinked + igor.volumeDrinked + andrew.volumeDrinked +
+                            vlad.volumeDrinked + matt.volumeDrinked;
+                        double globalAlcoholDrinkedPercent = (ivanDrinked + igorDrinked + andrewDrinked +
+                            vladDrinked + mattDrinked) / globalDrinked;
+                        Console.WriteLine($"{globalDrinked}, {globalAlcoholDrinkedPercent}");
+                        Console.WriteLine("\nНажмите любую кнопку, чтобы продолжить\n");
+                        Console.ReadKey();
                         break;
 
                     default:
