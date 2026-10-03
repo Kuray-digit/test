@@ -126,7 +126,7 @@ namespace Program
                         economy = normPrice * (salePrice / 100);
                         answer = holidayPrice / economy;
                         answer = Math.Floor(answer);
-                        Console.WriteLine($"{answer}, {economy}");
+                        Console.WriteLine($"{answer}");
                         Console.WriteLine("\nНажмите любую кнопку, чтобы продолжить\n");
                         Console.ReadKey();
                         break;
@@ -140,7 +140,7 @@ namespace Program
                             indificator = 0,
                             birthday = "20.08.2008",
                             alcoCategory = CategoryOfAlcogolism.d,
-                            volumeDrinked = 0
+                            volumeDrinked = 1
                         };
                         Student igor = new()
                         {
@@ -174,9 +174,9 @@ namespace Program
                             name = "Matt",
                             surname = "Istoriev",
                             indificator = 0,
-                            birthday = "18.11.2008",
+                            birthday = "2.10.2008",
                             alcoCategory = CategoryOfAlcogolism.d,
-                            volumeDrinked = 0
+                            volumeDrinked = 1
                         };
                         Drinks Pivo = new()
                         {
@@ -195,9 +195,27 @@ namespace Program
                         double mattDrinked = Pivo.alcoholContent * matt.volumeDrinked;
                         int globalDrinked = ivan.volumeDrinked + igor.volumeDrinked + andrew.volumeDrinked +
                             vlad.volumeDrinked + matt.volumeDrinked;
-                        double globalAlcoholDrinkedPercent = (ivanDrinked + igorDrinked + andrewDrinked +
-                            vladDrinked + mattDrinked) / globalDrinked;
-                        Console.WriteLine($"{globalDrinked}, {globalAlcoholDrinkedPercent}");
+                        double globalAlcoholDrinked = (ivanDrinked + igorDrinked + andrewDrinked +
+                            vladDrinked + mattDrinked);
+                        double globalAlcoholDrinkedPercent = globalAlcoholDrinked / 100;
+                        double ivanPercentOfAlcohol = ivanDrinked / globalAlcoholDrinked;
+                        double igorPercentOfAlcohol = igorDrinked / globalAlcoholDrinked;
+                        double andrewPercentOfAlcohol = andrewDrinked / globalAlcoholDrinked;
+                        double vladPercentOfAlcohol = vladDrinked / globalAlcoholDrinked;
+                        double mattPercentOfAlcohol = mattDrinked / globalAlcoholDrinked;
+
+                        double globalWaterDrinked = globalDrinked - globalAlcoholDrinked;
+                        double ivanPercentOfWater = ivanDrinked / globalWaterDrinked;
+                        double igorPercentOfWater = igorDrinked / globalWaterDrinked;
+                        double andrewPercentOfWater = andrewDrinked / globalWaterDrinked;
+                        double vladPercentOfWater = vladDrinked / globalWaterDrinked;
+                        double mattPercentOfWater = mattDrinked / globalWaterDrinked;
+                        Console.WriteLine($"{globalDrinked}, {globalAlcoholDrinkedPercent}, \nВыпито алкоголя в процентах:" +
+                            $" {ivanPercentOfAlcohol}, {igorPercentOfAlcohol}, {andrewPercentOfAlcohol}," +
+                            $" {vladPercentOfAlcohol}, {mattPercentOfAlcohol}, \nВыпито воды в процентах:" +
+                            $" {ivanPercentOfWater}, {igorPercentOfWater}, {andrewPercentOfWater}," +
+                            $" {vladPercentOfWater}, {mattPercentOfWater}");
+
                         Console.WriteLine("\nНажмите любую кнопку, чтобы продолжить\n");
                         Console.ReadKey();
                         break;
