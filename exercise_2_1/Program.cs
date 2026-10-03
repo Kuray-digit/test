@@ -3,9 +3,9 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Program
 {
-    class exercise_2_1
+    class Exercise_2_1
     {
-        enum bankCards
+        enum BankCards
         {
             current,
             saving
@@ -13,7 +13,7 @@ namespace Program
         public static void Main()
         {
             
-            bankCards myBankCard = bankCards.current;
+            BankCards myBankCard = BankCards.current;
             Console.WriteLine(myBankCard);
         }
     }
